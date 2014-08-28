@@ -17,6 +17,7 @@ function disableDisplay {
 function enableDisplay {
     xset dpms force on
     xdotool mousemove 0 0
+    aplay ~/Downloads/beep-09.wav
 }
 
 # check arguments
@@ -46,7 +47,7 @@ while sleep 5; do
     echo "activeFor: $activeFor; activityTime: $activityTime + postpone: $postponeDuration"
     
     breakIn=$(( $activityTime + $postponeDuration - $activeFor ))
-    if [ $breakIn -le 120 ]; then
+    if [ $breakIn -le 600 ]; then
         notify-send "Break in $breakIn seconds." -t 5000
     fi
 
