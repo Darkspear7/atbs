@@ -8,8 +8,6 @@ postponeDuration=0
 
 file="/tmp/break_script"
 
-monitors=(  DVI-I-0 HDMI-0 )
-
 function disableDisplay {
     xset dpms force off
 }
@@ -17,7 +15,6 @@ function disableDisplay {
 function enableDisplay {
     xset dpms force on
     xdotool mousemove 0 0
-    aplay ~/Downloads/beep-09.wav
 }
 
 # check arguments
